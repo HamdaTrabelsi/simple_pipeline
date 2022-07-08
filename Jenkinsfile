@@ -23,7 +23,7 @@ pipeline {
                 sh """#!/bin/bash
                 ENVCOUNT=\$(apictl get envs --format {{.}} | wc -l)
                 if [ "\$ENVCOUNT" == "0" ]; then
-                    apictl add-env -e live --apim https://am.wso.com
+                    apictl add env -e live --apim https://am.wso.com
                 fi
                 """
             }
