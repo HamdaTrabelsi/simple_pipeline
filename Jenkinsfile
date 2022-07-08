@@ -21,7 +21,7 @@ pipeline {
         stage('Setup Environment for APICTL') {
             steps {
                 sh """#!/bin/bash
-                ENVCOUNT=\$(apictl list envs --format {{.}} | wc -l)
+                ENVCOUNT=\$(apictl get envs --format {{.}} | wc -l)
                 if [ "\$ENVCOUNT" == "0" ]; then
                     apictl add-env -e live --apim https://am.wso.com
                 fi
