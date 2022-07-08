@@ -33,6 +33,7 @@ pipeline {
             steps {
                 sh """
                 apictl login live -u admin -p admin
+                apictl get envs
                 apictl vcs deploy -e live
                 """
             }
