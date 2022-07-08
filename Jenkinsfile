@@ -32,8 +32,8 @@ pipeline {
         stage('Deploy APIs To "Live" Environment') {
             steps {
                 sh """
-                apictl login live -u admin -p admin
                 apictl get envs
+                apictl login live -u admin -p admin
                 apictl vcs deploy -e live
                 """
             }
