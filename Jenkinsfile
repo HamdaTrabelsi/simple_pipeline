@@ -23,18 +23,18 @@ pipeline {
                 sh """#!/bin/bash
                 ENVCOUNT=\$(apictl get envs --format {{.}} | wc -l)
                 if [ "\$ENVCOUNT" == "0" ]; then
-                    apictl add env live  --apim https://am.wso2.com  --registration https://am.wso2.com  --token https://websub.am.wso2.com/token
+                    apictl add env dev  --apim https://am.wso2.com  --registration https://am.wso2.com  --token https://websub.am.wso2.com/token
                 fi
                 """
             }
         }
 
-        stage('Deploy APIs To "Live" Environment') {
+        stage('Deploy APIs To "Dev" Environment') {
             steps {
                 sh """
                 apictl get envs
-                apictl login live -u admin -p admin
-                apictl vcs deploy -e live
+                apictl login dev -u admin -p admin
+                apictl vcs deploy -e dev
                 """
             }
         }
