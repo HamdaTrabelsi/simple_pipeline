@@ -23,7 +23,7 @@ pipeline {
                 sh """#!/bin/bash
                 ENVCOUNT=\$(apictl get envs --format {{.}} | wc -l)
                 if [ "\$ENVCOUNT" == "0" ]; then
-                    apictl add env dev  --apim https://am.wso2.com  --registration https://am.wso2.com  --token https://websub.am.wso2.com/token
+                    apictl add env dev  --apim https://am.wso2.com  --registration https://am.wso2.com  --token https://websub.am.wso2.com/token -k
                 fi
                 """
             }
@@ -33,8 +33,8 @@ pipeline {
             steps {
                 sh """
                 apictl get envs
-                apictl login dev -u admin -p admin
-                apictl vcs deploy -e dev
+                apictl login dev -u admin -p admin -k
+                apictl vcs deploy -e dev -k
                 """
             }
         }
