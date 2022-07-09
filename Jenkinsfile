@@ -40,7 +40,7 @@ pipeline {
                 echo "***** 3 ******"
                 apictl login dev -u admin -p admin -k
                 echo "***** 4 ******"
-                ls -r /var/
+                ls -R /var/lib/jenkins
                 apictl vcs deploy -e dev -k
                 """
             }
