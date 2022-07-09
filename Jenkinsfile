@@ -32,6 +32,7 @@ pipeline {
         stage('Deploy APIs To "Dev" Environment') {
             steps {
                 sh """
+                rmdir deploy
                 mkdir deploy
                 apictl set --vcs-deployment-repo-path ./deploy
                 ls -r
