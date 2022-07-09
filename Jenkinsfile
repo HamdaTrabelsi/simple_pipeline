@@ -35,13 +35,13 @@ pipeline {
                 echo "***** export set *****"
                 apictl set --export-directory /var/lib/jenkins/.wso2apictl/exported/apis/
                 echo "***** deploy set *****"
-                apictl set --vcs-deployment-repo-path /var/lib/jenkins/.wso2apictl/exported/apis/
+                apictl set --vcs-deployment-repo-path /var/lib/jenkins/workspace/direct_pipeline
                 apictl set --vcs-config-path ./
                 #echo "***** rmdir *****"
                 #rmdir deploy
                 #mkdir deploy
                 
-                echo "***** 1 ******"
+                echo "***** local repo location ******"
                 apictl set --vcs-source-repo-path ./
                 echo ***** current *****
                 
