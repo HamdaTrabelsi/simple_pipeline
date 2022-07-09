@@ -41,18 +41,17 @@ pipeline {
                 #rmdir deploy
                 #mkdir deploy
                 
-                ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path ./
                 echo ***** current *****
                 
-                ls
                 echo "***** 2 ******"
                 apictl get envs
                 echo "***** 3 ******"
                 apictl login dev -u admin -p admin -k
                 echo "***** 4 ******"
                 #ls /var/lib/jenkins/.wso2apictl/exported/apis
+                ls
                 apictl vcs deploy -e dev -k
                 echo "***** 5 ******"
                 #rmdir deploy
