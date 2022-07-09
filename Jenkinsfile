@@ -36,13 +36,16 @@ pipeline {
                 #apictl set --export-directory /var/lib/jenkins/.wso2apictl/exported/apis/
                 echo "***** deploy set *****"
                 apictl set --vcs-deployment-repo-path /var/lib/jenkins/.wso2apictl/exported/apis/
-                echo "***** rmdir *****"
-                rmdir deploy
+                
+                #echo "***** rmdir *****"
+                #rmdir deploy
                 #mkdir deploy
+                
                 ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path ./
                 echo ***** current *****
+                
                 ls
                 echo "***** 2 ******"
                 apictl get envs
