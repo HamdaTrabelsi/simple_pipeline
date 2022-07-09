@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh """
                 echo "***** 1 ******"
-                apictl set --vcs-config-path /var/lib/jenkins/workspace/gitconfig
+                apictl set --vcs-source-repo-path /var/lib/jenkins/workspace/gitconfig
                 echo "***** 2 ******"
                 apictl get envs
                 echo "***** 3 ******"
