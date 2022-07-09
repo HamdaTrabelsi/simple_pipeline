@@ -35,6 +35,8 @@ pipeline {
                 ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path ./
+                apictl set --vcs-config-path /var/lib/jenkins/workspace/gitconfig
+
                 echo "***** 2 ******"
                 apictl get envs
                 echo "***** 3 ******"
