@@ -34,7 +34,7 @@ pipeline {
                 sh """
                 ls -r
                 echo "***** 1 ******"
-                apictl set --vcs-source-repo-path https://github.com/HamdaTrabelsi/simple_pipeline.git
+                apictl set --vcs-source-repo-path ./
                 echo "***** 2 ******"
                 apictl get envs
                 echo "***** 3 ******"
