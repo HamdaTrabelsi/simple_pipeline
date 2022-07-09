@@ -32,9 +32,13 @@ pipeline {
         stage('Deploy APIs To "Dev" Environment') {
             steps {
                 sh """
+                echo "***** 1 ******"
                 apictl set --vcs-config-path /var/lib/jenkins/workspace/gitconfig
+                echo "***** 2 ******"
                 apictl get envs
+                echo "***** 3 ******"
                 apictl login dev -u admin -p admin -k
+                echo "***** 4 ******"
                 apictl vcs deploy -e dev -k
                 """
             }
