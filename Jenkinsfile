@@ -33,9 +33,9 @@ pipeline {
             steps {
                 sh """
                 #echo "***** export set *****"
-                #apictl set --export-directory /var/lib/jenkins/workspace/direct_pipeline
+                apictl set --export-directory /var/lib/jenkins/workspace/last_pipeline
                 echo "***** deploy set *****"
-                #apictl set --vcs-deployment-repo-path /var/lib/jenkins/workspace/direct_pipeline
+                apictl set --vcs-deployment-repo-path /var/lib/jenkins/workspace/last_pipeline
                 apictl set --vcs-config-path /var/lib/jenkins/workspace/gitconfig
                 #echo "***** rmdir *****"
                 #rmdir deploy
