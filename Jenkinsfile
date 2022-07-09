@@ -32,17 +32,17 @@ pipeline {
         stage('Deploy APIs To "Dev" Environment') {
             steps {
                 sh """
-                echo "***** export set *****"
-                apictl set --export-directory /var/lib/jenkins/workspace/direct_pipeline
+                #echo "***** export set *****"
+                #apictl set --export-directory /var/lib/jenkins/workspace/direct_pipeline
                 echo "***** deploy set *****"
-                apictl set --vcs-deployment-repo-path /var/lib/jenkins/workspace/direct_pipeline
+                #apictl set --vcs-deployment-repo-path /var/lib/jenkins/workspace/direct_pipeline
                 apictl set --vcs-config-path /var/lib/jenkins/workspace/gitconfig
                 #echo "***** rmdir *****"
                 #rmdir deploy
                 #mkdir deploy
                 
-                echo "***** local repo location ******"
-                apictl set --vcs-source-repo-path ./
+                #echo "***** local repo location ******"
+                #apictl set --vcs-source-repo-path ./
                 echo ***** current *****
                 
                 echo "***** 2 ******"
