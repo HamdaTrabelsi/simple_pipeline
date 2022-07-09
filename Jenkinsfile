@@ -32,9 +32,13 @@ pipeline {
         stage('Deploy APIs To "Dev" Environment') {
             steps {
                 sh """
+                echo "***** export set *****"
+                apictl set --export-directory /var/lib/jenkins/.wso2apictl/exported/apis/
+                echo "***** deploy set *****"
+                apictl set --vcs-deployment-repo-path /var/lib/jenkins/.wso2apictl/exported/apis/
+                echo "***** rmdir *****"
                 rmdir deploy
-                mkdir deploy
-                apictl set --vcs-deployment-repo-path ./deploy
+                #mkdir deploy
                 ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path ./
@@ -48,7 +52,7 @@ pipeline {
                 #ls /var/lib/jenkins/.wso2apictl/exported/apis
                 apictl vcs deploy -e dev -k
                 echo "***** 5 ******"
-                rmdir deploy
+                #rmdir deploy
                 """
             }
         }
