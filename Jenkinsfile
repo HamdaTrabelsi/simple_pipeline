@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh """
                 echo "***** export set *****"
-                apictl set --export-directory /var/lib/jenkins/.wso2apictl/exported/apis/
+                apictl set --export-directory ./
                 echo "***** deploy set *****"
                 apictl set --vcs-deployment-repo-path /var/lib/jenkins/.wso2apictl/exported/apis/
                 apictl set --vcs-config-path ./
