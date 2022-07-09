@@ -34,6 +34,7 @@ pipeline {
                 sh """
                 apictl get envs
                 apictl login dev -u admin -p admin -k
+                apictl vcs status
                 apictl vcs deploy -e dev -k
                 """
             }
