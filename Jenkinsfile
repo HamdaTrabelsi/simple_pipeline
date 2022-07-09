@@ -33,7 +33,7 @@ pipeline {
             steps {
                 sh """
                 mkdir deploy
-                apictl set --vcs-deployment-repo-path /deploy
+                apictl set --vcs-deployment-repo-path ./deploy
                 ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path ./
@@ -46,6 +46,7 @@ pipeline {
                 echo "***** 4 ******"
                 #ls /var/lib/jenkins/.wso2apictl/exported/apis
                 apictl vcs deploy -e dev -k
+                echo "***** 5 ******"
                 rmdir deploy
                 """
             }
