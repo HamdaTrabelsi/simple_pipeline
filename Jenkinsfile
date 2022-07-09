@@ -52,7 +52,7 @@ pipeline {
                 echo "***** 4 ******"
                 #ls /var/lib/jenkins/.wso2apictl/exported/apis
                 ls
-                apictl vcs deploy -e dev -k
+                apictl vcs deploy -e dev -k --verbose
                 echo "***** 5 ******"
                 #rmdir deploy
                 """
