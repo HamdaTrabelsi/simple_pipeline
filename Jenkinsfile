@@ -35,14 +35,14 @@ pipeline {
                 ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path ./
-                apictl set --vcs-config-path /var/lib/jenkins/workspace/gitconfig
-
+                echo ***** current *****
+                ls
                 echo "***** 2 ******"
                 apictl get envs
                 echo "***** 3 ******"
                 apictl login dev -u admin -p admin -k
                 echo "***** 4 ******"
-                ls /var/lib/jenkins/.wso2apictl/exported/apis
+                #ls /var/lib/jenkins/.wso2apictl/exported/apis
                 apictl vcs deploy -e dev -k
                 """
             }
