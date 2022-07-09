@@ -32,6 +32,7 @@ pipeline {
         stage('Deploy APIs To "Dev" Environment') {
             steps {
                 sh """
+                ls -r
                 echo "***** 1 ******"
                 apictl set --vcs-source-repo-path https://github.com/HamdaTrabelsi/simple_pipeline.git
                 echo "***** 2 ******"
